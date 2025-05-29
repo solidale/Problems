@@ -1,21 +1,23 @@
 
 
-
+# target_sum = m
+# len(numbers) = n
 def best_sum(target_sum: int, numbers: list[int]) -> list[int]:
-    table = [None] * (target_sum + 1)
+    table = [None] * (target_sum + 1) # s: O(m)
     table[0] = []
 
-    for i in range(target_sum):
+    for i in range(target_sum): # t: O(m)
         if table[i] != None:
-            for number in numbers:
+            for number in numbers: # t: O(n)
                 if i + number <= target_sum:
-                    candidate_combination = table[i] + [number]
+                    candidate_combination = table[i] + [number] # t: O(m)
                     if table[i + number] == None:
-                        table[i + number] = candidate_combination
+                        table[i + number] = candidate_combination # s: O(m)
                     elif len(candidate_combination) < len(table[i + number]):
                         table[i + number] = candidate_combination
     return table[target_sum]
-
+    # t: O(m*n*m)
+    # s: O(m*m)
 
 
 

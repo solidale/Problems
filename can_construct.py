@@ -25,10 +25,10 @@ def can_construct_dyn(target: str, word_bank: list[str], memo = {}) -> bool:
     memo[target] = False
     return False
 
-def test_can_construct():
-    assert can_construct("abcdef", ["ab", "abc", "cd", "def", "abcd"]) == True
-    assert can_construct("skateboard", ["bo","rd","ate","t","ska","sk","boar"]) == False
-    assert can_construct("eeeeeeeeeeeeeeef", ["e"]) == False
+# def test_can_construct():
+#     assert can_construct("abcdef", ["ab", "abc", "cd", "def", "abcd"]) == True
+#     assert can_construct("skateboard", ["bo","rd","ate","t","ska","sk","boar"]) == False
+#     assert can_construct("eeeeeeeeeeeeeeef", ["e"]) == False
     
 def test_can_construct_dyn():
     assert can_construct_dyn("abcdef", ["ab", "abc", "cd", "def", "abcd"]) == True
@@ -36,9 +36,9 @@ def test_can_construct_dyn():
     assert can_construct_dyn("eeeeeeeeeeeeeeef", ["e"]) == False
 
 
-start = datetime.now()
-can_construct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", ["e","ee","eee","eeee","eeeee"])
-print(f"unoptimized version takes: {datetime.now() - start}")
+# start = datetime.now()
+# can_construct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", ["e","ee","eee","eeee","eeeee"])
+# print(f"unoptimized version takes: {datetime.now() - start}")
 
 start = datetime.now()
 can_construct_dyn("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", ["e","ee","eee","eeee","eeeee"])

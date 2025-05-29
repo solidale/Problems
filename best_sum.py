@@ -1,5 +1,3 @@
-
-
 # target_sum = m
 # len(numbers) = n
 def best_sum(target_sum: int, numbers: list[int]) -> list[int]:
@@ -18,13 +16,6 @@ def best_sum(target_sum: int, numbers: list[int]) -> list[int]:
     return table[target_sum]
     # t: O(m*n*m)
     # s: O(m*m)
-
-
-
-
-
-
-
 
 def test_best_sum():
     assert(best_sum(8, [2, 3, 5]) == [3, 5])
